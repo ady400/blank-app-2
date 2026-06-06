@@ -38,7 +38,7 @@ st.markdown("""
         color: #4A154B !important;
     }
     </style>
-""", unsafe_index=True)
+""", unsafe_allow_html=True) 
 
 # --- SIDEBAR MENU (TEMA UNGU) ---
 with st.sidebar:
