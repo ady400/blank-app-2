@@ -157,7 +157,11 @@ B3_DATABASE = {
 
 # 4. INITIALIZATION DATABASE PERMANEN (CSV SYNC)
 NAMA_FILE_DB = "database_tps_b3.csv"
+# === YANG DIUBAH: DARI CSV JADI SESSION STATE MURNI ===
 KOLOM_DATABASE = ["ID Limbah", "Jenis Limbah", "Karakteristik / Simbol", "Rekomendasi Wadah", "Berat (Kg)", "Tanggal Masuk", "Batas Hari", "Sisa Hari", "Status"]
+
+if "b3_db" not in st.session_state:
+    st.session_state.b3_db = pd.DataFrame(columns=KOLOM_DATABASE)
 
 if os.path.exists(NAMA_FILE_DB):
     try:
